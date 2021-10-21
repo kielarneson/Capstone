@@ -1,0 +1,2 @@
+class Tailgate < ApplicationRecord
+end
