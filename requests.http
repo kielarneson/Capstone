@@ -24,7 +24,29 @@ Content-Type: application/json
 
 ###
 
+###
 GET http://localhost:3000/tailgates.json
+
+###
+POST http://localhost:3000/tailgates.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MzQ5NTA2MzZ9.1uh7qe03j2Ur3O7H-zOmWNhUMot0nzNMrFPTu9_JQfA
+Content-Type: application/json
+ 
+{
+ "user_id": 6,
+ "game_id": 3,
+ "name": "Test name",
+ "description": "Many words...",
+ "address": "Test address",
+ "start_time": "2021-10-03T09:00:00-6:00",
+ "end_time": "2021-10-03T13:00:00-6:00",
+ "parking_available": false,
+ "private_bathroom" :true, 
+ "alcohol_allowed": false,
+ "food_provided": false,
+ "family_friendly": true,
+ "tv_available": true
+}
 
 ###
 
