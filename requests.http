@@ -19,3 +19,6 @@ Content-Type: application/json
    "email": "bryce@test.com",
    "password": "password"
  }
+
+### Index games
+GET http://localhost:3000/games/ncaa+football.json

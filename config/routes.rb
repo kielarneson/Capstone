@@ -3,5 +3,5 @@ Rails.application.routes.draw do
 
   post "/sessions" => "sessions#create"
 
-  get "/games" => "games#index"
+  get "/games/:category" => "games#index"
 end
