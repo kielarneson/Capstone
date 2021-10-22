@@ -24,10 +24,10 @@ Content-Type: application/json
 
 ###
 
-###
+### Index tailgates
 GET http://localhost:3000/tailgates.json
 
-###
+### Create tailgate
 POST http://localhost:3000/tailgates.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MzQ5NTA2MzZ9.1uh7qe03j2Ur3O7H-zOmWNhUMot0nzNMrFPTu9_JQfA
 Content-Type: application/json
@@ -41,15 +41,37 @@ Content-Type: application/json
  "start_time": "2021-10-03T09:00:00-6:00",
  "end_time": "2021-10-03T13:00:00-6:00",
  "parking_available": false,
- "private_bathroom" :true, 
+ "private_bathroom": true, 
  "alcohol_allowed": false,
  "food_provided": false,
  "family_friendly": true,
  "tv_available": true
 }
 
-###
+### Show tailgate
 GET http://localhost:3000/tailgates/3.json
+
+### Update tailgate
+PATCH http://localhost:3000/tailgates/4.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MzQ5NTA2MzZ9.1uh7qe03j2Ur3O7H-zOmWNhUMot0nzNMrFPTu9_JQfA
+Content-Type: application/json
+ 
+{
+ "name": "Test name",
+ "description": "Many words...",
+ "address": "Test address",
+ "start_time": "2021-10-03T09:00:00-6:00",
+ "end_time": "2021-10-03T13:00:00-6:00",
+ "parking_available": false,
+ "private_bathroom": true, 
+ "alcohol_allowed": false,
+ "food_provided": false,
+ "family_friendly": true,
+ "tv_available": true
+}
+
+### Delete tailgate
+DELETE http://localhost:3000/tailgates/2.json
 
 ###
 
@@ -58,6 +80,7 @@ GET http://localhost:3000/games/ncaa+football.json
 
 ### Create games
 POST http://localhost:3000/games/ncaa+football.json
+
 
 
 
