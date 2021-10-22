@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_21_234714) do
+ActiveRecord::Schema.define(version: 2021_10_22_023416) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,24 @@ ActiveRecord::Schema.define(version: 2021_10_21_234714) do
     t.integer "tailgate_id"
     t.string "parking_type"
     t.string "address"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tailgate_users", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "tailgate_id"
+    t.boolean "requested"
+    t.boolean "accepted"
+    t.text "review"
+    t.decimal "overall_rating", precision: 3, scale: 1
+    t.integer "truthful_rating"
+    t.integer "location_rating"
+    t.integer "hospitality_rating"
+    t.integer "amenities_rating"
+    t.integer "parking_rating"
+    t.integer "food_rating"
+    t.integer "drink_rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
