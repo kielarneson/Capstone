@@ -11,6 +11,8 @@ Content-Type: application/json
  "password_confirmation": "password"
 }
 
+###
+
 ### Create sessions
 POST http://localhost:3000/sessions.json
 Content-Type: application/json
@@ -20,9 +22,17 @@ Content-Type: application/json
    "password": "password"
  }
 
+###
+
+GET http://localhost:3000/tailgates.json
+
+###
+
 ### Index games
 GET http://localhost:3000/games/ncaa+football.json
 
 ### Create games
 POST http://localhost:3000/games/ncaa+football.json
+
+
 
