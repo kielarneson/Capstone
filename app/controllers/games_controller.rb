@@ -7,7 +7,7 @@ class GamesController < ApplicationController
     uri = URI.parse("https://api.collegefootballdata.com/games?year=2018&week=9&seasonType=regular")
     request = Net::HTTP::Get.new(uri)
     request["Accept"] = "application/json"
-    request["Authorization"] = "Bearer 5ln/cNSd7OW/bNvLui5+WIC0ljQ4gb/1irOPdeodJQUbo02+zv/mlp/rYLTbwBka"
+    request["Authorization"] = "Bearer #{Rails.application.credentials.cfdb_api_key}"
 
     req_options = {
       use_ssl: uri.scheme == "https",
