@@ -1,4 +1,4 @@
-### Create User
+### Create user
 POST http://localhost:3000/users.json
 Content-Type: application/json
  
@@ -10,3 +10,12 @@ Content-Type: application/json
  "password": "password",
  "password_confirmation": "password"
 }
+
+### Create sessions
+POST http://localhost:3000/sessions.json
+Content-Type: application/json
+ 
+ {
+   "email": "bryce@test.com",
+   "password": "password"
+ }
