@@ -49,6 +49,9 @@ Content-Type: application/json
 }
 
 ###
+GET http://localhost:3000/tailgates/3.json
+
+###
 
 ### Index games
 GET http://localhost:3000/games/ncaa+football.json

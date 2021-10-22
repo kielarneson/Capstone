@@ -27,4 +27,9 @@ class TailgatesController < ApplicationController
       render json: { errors: tailgate.errors.full_messages }, status: :bad_request
     end
   end
+
+  def show
+    tailgate = Tailgate.find_by(id: params[:id])
+    render json: tailgate
+  end
 end
