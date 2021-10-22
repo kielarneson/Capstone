@@ -3,4 +3,8 @@ class Game < ApplicationRecord
 
   has_many :tailgates
   has_many :users, through: :tailgates
+
+  def start_time_conversion
+    start_time.strftime("%I:%MPM - %B %e, %Y")
+  end
 end

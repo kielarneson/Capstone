@@ -9,6 +9,6 @@ Rails.application.routes.draw do
   patch "/tailgates/:id" => "tailgates#update"
   delete "/tailgates/:id" => "tailgates#destroy"
 
-  get "/games/:category" => "games#index"
-  post "/games/:category" => "games#create"
+  get "/games" => "games#index"
+  post "/games" => "games#create"
 end

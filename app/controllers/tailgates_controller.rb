@@ -8,12 +8,6 @@ class TailgatesController < ApplicationController
   end
 
   def create
-    # game = Game.find_by(api_id: params[:api_id])
-    # if game
-    # else
-    #   game = Game.new()
-    #   game.save
-    # end
     tailgate = Tailgate.new(
       user_id: current_user.id,
       game_id: params[:game_id],

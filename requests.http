@@ -28,13 +28,11 @@ Content-Type: application/json
 GET http://localhost:3000/tailgates.json
 
 ### Create tailgate
-POST http://localhost:3000/tailgates.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MzQ5NTQxMDR9.3LVrSEvBRhusdV-jEwolEdodUgxpq800UcVK4Owbgqc
+POST http://localhost:3000/tailgates?q=ncaa+football.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzQ5OTk4ODV9.OkxtY1WcpfUZ8xt6mrAn6NWuGhMY1amD1BujHWRG9S0
 Content-Type: application/json
  
 {
- "user_id": 6,
- "game_id": 3,
  "name": "Test name",
  "description": "Many words...",
  "address": "Test address",
@@ -49,7 +47,7 @@ Content-Type: application/json
 }
 
 ### Show tailgate
-GET http://localhost:3000/tailgates/3.json
+GET http://localhost:3000/tailgates/2.json
 
 ### Update tailgate
 PATCH http://localhost:3000/tailgates/4.json
@@ -77,10 +75,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzQ5NTUwO
 ###
 
 ### Index games
-GET http://localhost:3000/games/ncaa+football.json
+GET http://localhost:3000/games.json
 
 ### Create games
-POST http://localhost:3000/games/ncaa+football.json
+POST http://localhost:3000/games?q=ncaa_football.json
 
 
 
