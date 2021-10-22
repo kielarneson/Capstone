@@ -22,3 +22,7 @@ Content-Type: application/json
 
 ### Index games
 GET http://localhost:3000/games/ncaa+football.json
+
+### Create games
+POST http://localhost:3000/games/ncaa+football.json
+
