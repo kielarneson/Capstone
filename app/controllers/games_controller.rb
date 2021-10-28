@@ -1,23 +1,9 @@
 class GamesController < ApplicationController
-  require "net/http"
-  require "json"
-  require "uri"
-
   def index
-    uri = URI.parse("https://api.collegefootballdata.com/games?year=2018&week=9&seasonType=regular")
-    request = Net::HTTP::Get.new(uri)
-    request["Accept"] = "application/json"
-    request["Authorization"] = "Bearer #{Rails.application.credentials.cfdb_api_key}"
-
-    req_options = {
-      use_ssl: uri.scheme == "https",
-    }
-
-    response = Net::HTTP.start(uri.hostname, uri.port, req_options) do |http|
-      http.request(request)
-    end
-
+    response = HTTP.get("https://api.seatgeek.com/2/events?q=#{params[:q]}&client_id=MzA3NTE0OHwxNjMxOTEyOTc1LjMzNDA4NA&client_secret=#{Rails.application.credentials.seat_geek_api_key}")
     games = JSON.parse(response.body)
+
+    games = games["events"]
 
     # Upcoming games ordered by closest start time to Time.now
     render json: games

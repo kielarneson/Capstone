@@ -5,7 +5,7 @@ Content-Type: application/json
 {
  "first_name": "Bryce",
  "last_name": "Young",
- "user_name": "BamaQB1",
+ "user_name": "brycedude",
  "email": "bryce@test.com",
  "password": "password",
  "password_confirmation": "password"
@@ -75,10 +75,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzQ5NTUwO
 ###
 
 ### Index games
-GET http://localhost:3000/games.json
+GET http://localhost:3000/games?q=alabama-crimson-tide-football.json
 
 ### Create games
-POST http://localhost:3000/games?q=ncaa_football.json
+POST http://localhost:3000/games.json
 
 
 
