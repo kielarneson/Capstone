@@ -80,6 +80,9 @@ GET http://localhost:3000/games?q=alabama-crimson-tide-football.json
 ### Create games
 POST http://localhost:3000/games.json
 
+### Show games
+GET http://localhost:3000/games/5375467.json
+
 
 
 

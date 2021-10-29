@@ -3,7 +3,11 @@ class GamesController < ApplicationController
     response = HTTP.get("https://api.seatgeek.com/2/events?q=#{params[:q]}&client_id=MzA3NTE0OHwxNjMxOTEyOTc1LjMzNDA4NA&client_secret=#{Rails.application.credentials.seat_geek_api_key}")
     games = JSON.parse(response.body)
 
-    games = games["events"]
+    tailgates = Tailgate.all
+    games = games["events"].map do |event|
+      event["tailgates"] = tailgates.select { |tailgate| event["id"].to_s == tailgate.game.api_id.to_s }
+      event
+    end
 
     # Upcoming games ordered by closest start time to Time.now
     render json: games
@@ -44,5 +48,12 @@ class GamesController < ApplicationController
     else
       render json: { errors: game.errors.full_messages }, status: :bad_request
     end
+  end
+
+  def show
+    response = HTTP.get("https://api.seatgeek.com/2/events/#{params[:api_id]}?client_id=MzA3NTE0OHwxNjMxOTEyOTc1LjMzNDA4NA&client_secret=#{Rails.application.credentials.seat_geek_api_key}")
+    game = JSON.parse(response.body)
+
+    render json: game.as_json
   end
 end

@@ -11,4 +11,5 @@ Rails.application.routes.draw do
 
   get "/games" => "games#index"
   post "/games" => "games#create"
+  get "/games/:api_id" => "games#show"
 end
