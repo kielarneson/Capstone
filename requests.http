@@ -21,7 +21,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
  
  {
-   "email": "kiel@test.com",
+   "email": "peter@test.com",
    "password": "password"
  }
 
@@ -86,6 +86,16 @@ POST http://localhost:3000/games.json
 ### Show games
 GET http://localhost:3000/games/5375467.json
 
+###
 
+### Create tailgate_users
+POST http://localhost:3000/tailgate_users.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU4NjY5MTd9.F_JLYllJBkHF00iSya8Z_NKhQrY_X3tkck90VhmjvWc
+Content-Type: application/json
+ 
+{
+ "tailgate_id": 3,
+ "game_id": 3
+}
 
 
