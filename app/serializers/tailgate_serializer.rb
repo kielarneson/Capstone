@@ -3,4 +3,5 @@ class TailgateSerializer < ActiveModel::Serializer
 
   belongs_to :game
   belongs_to :user
+  has_many :tailgate_users
 end

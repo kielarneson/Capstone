@@ -1,6 +1,7 @@
 class Tailgate < ApplicationRecord
   belongs_to :user
   belongs_to :game
+  has_many :tailgate_users
 
   def start_time_conversion
     start_time.strftime("%I:%MPM")

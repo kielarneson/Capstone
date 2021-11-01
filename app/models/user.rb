@@ -7,6 +7,7 @@ class User < ApplicationRecord
   has_many :tailgate_users
   has_many :tailgates
   has_many :games, through: :tailgates
+  has_many :tailgate_users, through: :games
   has_many :lodgings
   has_many :parkings
 end

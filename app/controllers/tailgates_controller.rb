@@ -33,7 +33,7 @@ class TailgatesController < ApplicationController
   def show
     tailgate = Tailgate.find_by(id: params[:id])
 
-    render json: tailgate
+    render json: tailgate, include: "user,game,tailgate_users.user"
   end
 
   def update

@@ -11,6 +11,9 @@ Content-Type: application/json
  "password_confirmation": "password"
 }
 
+### Show user
+GET http://localhost:3000/users/1.json
+
 ###
 
 ### Create sessions
