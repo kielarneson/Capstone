@@ -2,7 +2,8 @@ class TailgateUsersController < ApplicationController
   before_action :authenticate_user, only: [:create]
 
   def create
-    tailgate_user = TailgateUser.new(
+    # Need to make this action work on the front end as well
+    tailgate_user = TailgateUser.find_or_initialize_by(
       user_id: current_user.id,
       tailgate_id: params[:tailgate_id],
       game_id: params[:game_id],

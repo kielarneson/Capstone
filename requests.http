@@ -21,7 +21,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
  
  {
-   "email": "peter@test.com",
+   "email": "kiel@test.com",
    "password": "password"
  }
 
@@ -101,14 +101,14 @@ Content-Type: application/json
 ###
 
 ### Create lodgings
-POST http://localhost:3000/lodgings.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU4NjY5MTd9.F_JLYllJBkHF00iSya8Z_NKhQrY_X3tkck90VhmjvWc
+POST http://localhost:3000/lodgings.json`
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU4NzA3Mjd9.3WLvAjU_XiG31FZ8BMEadrTLqlFdiDaKlmLg6ORJO5o
 Content-Type: application/json
 
 {
-  "tailgate_id": 4,
-  "lodging_type": "Airbnb",
-  "lodging_name": "John's beautiful house",
-  "address": "201 Bluebird DR"
+  "tailgate_id": 3,
+  "lodging_type": "Hotel",
+  "lodging_name": "Holiday Inn",
+  "address": "201 Gemfile DR"
 }
 
