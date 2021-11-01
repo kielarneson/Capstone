@@ -15,4 +15,6 @@ Rails.application.routes.draw do
   get "/games/:api_id" => "games#show"
 
   post "/tailgate_users" => "tailgate_users#create"
+
+  post "/lodgings" => "lodgings#create"
 end
