@@ -101,7 +101,7 @@ Content-Type: application/json
 ###
 
 ### Create lodgings
-POST http://localhost:3000/lodgings.json`
+POST http://localhost:3000/lodgings.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU4NzA3Mjd9.3WLvAjU_XiG31FZ8BMEadrTLqlFdiDaKlmLg6ORJO5o
 Content-Type: application/json
 
@@ -112,3 +112,15 @@ Content-Type: application/json
   "address": "201 Gemfile DR"
 }
 
+###
+
+### Create Parkings
+POST http://localhost:3000/parkings.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU4NzA3Mjd9.3WLvAjU_XiG31FZ8BMEadrTLqlFdiDaKlmLg6ORJO5o
+Content-Type: application/json
+
+{
+  "tailgate_id": 3,
+  "parking_type": "Street",
+  "address": "504 Small Rd"
+}

@@ -17,4 +17,6 @@ Rails.application.routes.draw do
   post "/tailgate_users" => "tailgate_users#create"
 
   post "/lodgings" => "lodgings#create"
+
+  post "/parkings" => "parkings#create"
 end
