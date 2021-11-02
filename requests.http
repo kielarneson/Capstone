@@ -21,7 +21,7 @@ POST http://localhost:3000/sessions.json
 Content-Type: application/json
  
  {
-   "email": "kiel@test.com",
+   "email": "bryce@test.com",
    "password": "password"
  }
 
@@ -88,6 +88,11 @@ GET http://localhost:3000/games/5375467.json
 
 ###
 
+### Index tailgate_users
+GET http://localhost:3000/tailgate_users.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2MzU5NDkyMjl9.xdCovdAyiVngtuOCcI3_dRQcXzPvifoEAZvskipaKAY
+Content-Type: application/json
+
 ### Create tailgate_users
 POST http://localhost:3000/tailgate_users.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU4NjY5MTd9.F_JLYllJBkHF00iSya8Z_NKhQrY_X3tkck90VhmjvWc
@@ -99,6 +104,11 @@ Content-Type: application/json
 }
 
 ###
+
+### Index lodgings
+GET http://localhost:3000/lodgings.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU4NzA3Mjd9.3WLvAjU_XiG31FZ8BMEadrTLqlFdiDaKlmLg6ORJO5o
+Content-Type: application/json
 
 ### Create lodgings
 POST http://localhost:3000/lodgings.json

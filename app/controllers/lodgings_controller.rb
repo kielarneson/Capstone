@@ -1,5 +1,11 @@
 class LodgingsController < ApplicationController
-  before_action :authenticate_user, only: [:create]
+  before_action :authenticate_user, only: [:index, :create]
+
+  def index
+    lodgings = Lodging.where(user_id: current_user.id)
+
+    render json: lodgings
+  end
 
   def create
     lodging = Lodging.new(

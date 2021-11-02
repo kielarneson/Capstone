@@ -1,5 +1,11 @@
 class TailgateUsersController < ApplicationController
-  before_action :authenticate_user, only: [:create]
+  before_action :authenticate_user, only: [:index, :create]
+
+  def index
+    tailgates = TailgateUser.where(user_id: current_user.id)
+
+    render json: tailgates
+  end
 
   def create
     # Need to make this action work on the front end as well
