@@ -1,4 +1,4 @@
-class TeamsController < ApplicationController
+class RecordsController < ApplicationController
   require "net/http"
   require "json"
   require "uri"
@@ -17,8 +17,8 @@ class TeamsController < ApplicationController
       http.request(request)
     end
 
-    teams = JSON.parse(response.body)
+    record = JSON.parse(response.body)
 
-    render json: teams
+    render json: record
   end
 end

@@ -142,5 +142,5 @@ Content-Type: application/json
 
 ###
 
-### Teams index
-GET http://localhost:3000/teams?q=ole miss
+### Records index
+GET http://localhost:3000/records?q=ole miss
