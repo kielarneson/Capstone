@@ -124,6 +124,11 @@ Content-Type: application/json
 
 ###
 
+### Index parkings
+GET http://localhost:3000/parkings.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzYwMzcxNzF9.7FMZ689CGFh2xgolGWUGlhxtuuly7WDBmTkduHUExFQ
+Content-Type: application/json
+
 ### Create Parkings
 POST http://localhost:3000/parkings.json
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU4NzA3Mjd9.3WLvAjU_XiG31FZ8BMEadrTLqlFdiDaKlmLg6ORJO5o

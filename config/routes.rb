@@ -20,5 +20,6 @@ Rails.application.routes.draw do
   get "/lodgings" => "lodgings#index"
   post "/lodgings" => "lodgings#create"
 
+  get "/parkings" => "parkings#index"
   post "/parkings" => "parkings#create"
 end
