@@ -139,3 +139,8 @@ Content-Type: application/json
   "parking_type": "Street",
   "address": "504 Small Rd"
 }
+
+###
+
+### Teams index
+GET http://localhost:3000/teams?q=ole miss

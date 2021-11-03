@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user, only: [:show]
+
   def create
     user = User.new(
       first_name: params[:first_name],

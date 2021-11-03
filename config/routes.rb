@@ -22,4 +22,6 @@ Rails.application.routes.draw do
 
   get "/parkings" => "parkings#index"
   post "/parkings" => "parkings#create"
+
+  get "/teams" => "teams#index"
 end
