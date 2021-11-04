@@ -24,4 +24,6 @@ Rails.application.routes.draw do
   post "/parkings" => "parkings#create"
 
   get "/records" => "records#index"
+
+  get "/historical_matchup_records" => "historical_matchup_records#index"
 end

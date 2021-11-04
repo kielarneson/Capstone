@@ -144,3 +144,8 @@ Content-Type: application/json
 
 ### Records index
 GET http://localhost:3000/records?q=ole miss
+
+###
+
+### Historical matchup records index
+GET http://localhost:3000/historical_matchup_records?team1=notre dame&team2=cincinnati
