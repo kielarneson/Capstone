@@ -26,4 +26,6 @@ Rails.application.routes.draw do
   get "/records" => "records#index"
 
   get "/historical_matchup_records" => "historical_matchup_records#index"
+
+  get "/rankings" => "rankings#index"
 end
