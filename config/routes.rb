@@ -28,4 +28,6 @@ Rails.application.routes.draw do
   get "/historical_matchup_records" => "historical_matchup_records#index"
 
   get "/rankings" => "rankings#index"
+
+  get "/news" => "news#index"
 end

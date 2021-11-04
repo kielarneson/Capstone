@@ -152,3 +152,8 @@ GET http://localhost:3000/historical_matchup_records?team1=notre dame&team2=cinc
 
 ### Rankings index
 GET http://localhost:3000/rankings.json
+
+###
+
+### News index
+GET http://localhost:3000/news?q=alabama-crimson-tide-football
