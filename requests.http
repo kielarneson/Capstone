@@ -157,3 +157,8 @@ GET http://localhost:3000/rankings.json
 
 ### News index
 GET http://localhost:3000/news?q=alabama-crimson-tide-football
+
+###
+
+### Bets show
+GET http://localhost:3000/bets?away=ole miss&home=alabama

@@ -30,4 +30,6 @@ Rails.application.routes.draw do
   get "/rankings" => "rankings#index"
 
   get "/news" => "news#index"
+
+  get "/bets" => "bets#show"
 end
