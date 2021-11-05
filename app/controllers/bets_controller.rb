@@ -19,6 +19,10 @@ class BetsController < ApplicationController
 
     bet = JSON.parse(response.body)
 
+    # Displaying all available bettings lines to the frontend
     render json: bet
+
+    # Displaying one book's line to the frontend
+    # render json: bet[0]["lines"][0]
   end
 end
