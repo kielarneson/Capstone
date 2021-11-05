@@ -5,9 +5,12 @@ class User < ApplicationRecord
   validates :user_name, :email, uniqueness: true
 
   has_many :tailgate_users
+  has_many :parkings, through: :tailgate_users
+  has_many :lodgings, through: :tailgate_users
+
   has_many :tailgates
   has_many :games, through: :tailgates
-  has_many :tailgate_users, through: :games
-  has_many :lodgings
-  has_many :parkings
+  # has_many :tailgate_users, through: :games
+  # has_many :lodgings
+  # has_many :parkings
 end

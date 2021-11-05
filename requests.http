@@ -1,3 +1,5 @@
+@jwt = eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzYyMTU0NTl9.Oz1TB48vZt8Wc03zLQQFiR-JvuyPzhtY2jQ8F_AF_nA
+
 ### Create user
 POST http://localhost:3000/users.json
 Content-Type: application/json
@@ -13,6 +15,7 @@ Content-Type: application/json
 
 ### Show user
 GET http://localhost:3000/users/1.json
+Authorization: Bearer {{jwt}}
 
 ###
 
@@ -32,7 +35,7 @@ GET http://localhost:3000/tailgates.json
 
 ### Create tailgate
 POST http://localhost:3000/tailgates?q=ncaa+football.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzQ5OTk4ODV9.OkxtY1WcpfUZ8xt6mrAn6NWuGhMY1amD1BujHWRG9S0
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
  
 {
@@ -54,7 +57,7 @@ GET http://localhost:3000/tailgates/2.json
 
 ### Update tailgate
 PATCH http://localhost:3000/tailgates/4.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo2LCJleHAiOjE2MzQ5NTQxMDR9.3LVrSEvBRhusdV-jEwolEdodUgxpq800UcVK4Owbgqc
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
  
 {
@@ -73,7 +76,7 @@ Content-Type: application/json
 
 ### Delete tailgate
 DELETE http://localhost:3000/tailgates/1.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzQ5NTUwOTF9.zDY1yeRGv1RUvg7qu0eAqhBNOKrdeLf5Uk1Z2VN5Lhg
+Authorization: Bearer {{jwt}}
 
 ###
 
@@ -90,12 +93,12 @@ GET http://localhost:3000/games/5375467.json
 
 ### Index tailgate_users
 GET http://localhost:3000/tailgate_users.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjo1LCJleHAiOjE2MzU5NDkyMjl9.xdCovdAyiVngtuOCcI3_dRQcXzPvifoEAZvskipaKAY
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### Create tailgate_users
 POST http://localhost:3000/tailgate_users.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyLCJleHAiOjE2MzU4NjY5MTd9.F_JLYllJBkHF00iSya8Z_NKhQrY_X3tkck90VhmjvWc
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
  
 {
@@ -107,16 +110,15 @@ Content-Type: application/json
 
 ### Index lodgings
 GET http://localhost:3000/lodgings.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU4NzA3Mjd9.3WLvAjU_XiG31FZ8BMEadrTLqlFdiDaKlmLg6ORJO5o
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### Create lodgings
 POST http://localhost:3000/lodgings.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU4NzA3Mjd9.3WLvAjU_XiG31FZ8BMEadrTLqlFdiDaKlmLg6ORJO5o
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "tailgate_id": 3,
   "lodging_type": "Hotel",
   "lodging_name": "Holiday Inn",
   "address": "201 Gemfile DR"
@@ -126,16 +128,15 @@ Content-Type: application/json
 
 ### Index parkings
 GET http://localhost:3000/parkings.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzYwMzcxNzF9.7FMZ689CGFh2xgolGWUGlhxtuuly7WDBmTkduHUExFQ
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 ### Create Parkings
 POST http://localhost:3000/parkings.json
-Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxLCJleHAiOjE2MzU4NzA3Mjd9.3WLvAjU_XiG31FZ8BMEadrTLqlFdiDaKlmLg6ORJO5o
+Authorization: Bearer {{jwt}}
 Content-Type: application/json
 
 {
-  "tailgate_id": 3,
   "parking_type": "Street",
   "address": "504 Small Rd"
 }

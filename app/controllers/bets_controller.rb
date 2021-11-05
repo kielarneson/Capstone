@@ -22,7 +22,7 @@ class BetsController < ApplicationController
     # Displaying all available bettings lines to the frontend
     render json: bet
 
-    # Displaying one book's line to the frontend
+    # Displaying one book's lines to the frontend
     # render json: bet[0]["lines"][0]
   end
 end

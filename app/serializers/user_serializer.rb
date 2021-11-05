@@ -3,6 +3,6 @@ class UserSerializer < ActiveModel::Serializer
 
   has_many :tailgates
   has_many :tailgate_users
-  has_many :lodgings
-  has_many :parkings
+  # has_many :lodgings
+  # has_many :parkings
 end

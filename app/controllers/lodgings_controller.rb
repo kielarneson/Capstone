@@ -2,15 +2,14 @@ class LodgingsController < ApplicationController
   before_action :authenticate_user, only: [:index, :create]
 
   def index
-    lodgings = Lodging.where(user_id: current_user.id)
+    parkings = current_user.parkings
 
     render json: lodgings
   end
 
   def create
     lodging = Lodging.new(
-      user_id: current_user.id,
-      tailgate_id: params[:tailgate_id],
+      tailgate_user_id: params[:tailgate_user_id],
       lodging_type: params[:lodging_type],
       lodging_name: params[:lodging_name],
       address: params[:address],

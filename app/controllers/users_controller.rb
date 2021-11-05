@@ -20,6 +20,6 @@ class UsersController < ApplicationController
   def show
     user = User.find_by(id: params[:id])
 
-    render json: user
+    render json: user, include: "tailgate_users.lodgings,tailgate_users.parkings,tailgate_users.game,tailgate_users.tailgate"
   end
 end

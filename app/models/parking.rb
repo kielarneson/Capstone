@@ -1,4 +1,3 @@
 class Parking < ApplicationRecord
-  belongs_to :user
-  belongs_to :tailgate
+  belongs_to :tailgate_user
 end

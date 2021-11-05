@@ -3,6 +3,7 @@ class CreateTailgateUsers < ActiveRecord::Migration[6.1]
     create_table :tailgate_users do |t|
       t.integer :user_id
       t.integer :tailgate_id
+      t.integer :game_id
       t.boolean :requested
       t.boolean :accepted
       t.text :review

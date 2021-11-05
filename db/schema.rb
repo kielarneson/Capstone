@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_29_223257) do
+ActiveRecord::Schema.define(version: 2021_10_21_234714) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,8 +30,7 @@ ActiveRecord::Schema.define(version: 2021_10_29_223257) do
   end
 
   create_table "lodgings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "tailgate_id"
+    t.integer "tailgate_user_id"
     t.string "lodging_type"
     t.string "lodging_name"
     t.string "address"
@@ -40,8 +39,7 @@ ActiveRecord::Schema.define(version: 2021_10_29_223257) do
   end
 
   create_table "parkings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "tailgate_id"
+    t.integer "tailgate_user_id"
     t.string "parking_type"
     t.string "address"
     t.datetime "created_at", precision: 6, null: false
@@ -51,6 +49,7 @@ ActiveRecord::Schema.define(version: 2021_10_29_223257) do
   create_table "tailgate_users", force: :cascade do |t|
     t.integer "user_id"
     t.integer "tailgate_id"
+    t.integer "game_id"
     t.boolean "requested"
     t.boolean "accepted"
     t.text "review"
@@ -64,7 +63,6 @@ ActiveRecord::Schema.define(version: 2021_10_29_223257) do
     t.integer "drink_rating"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "game_id"
   end
 
   create_table "tailgates", force: :cascade do |t|

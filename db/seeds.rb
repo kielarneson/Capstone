@@ -28,8 +28,8 @@ Tailgate.create!(user_id: 2, game_id: 1, name: "Peter Party", description: "Many
 TailgateUser.create!(user_id: 2, tailgate_id: 2, game_id: 1, requested: true, accepted: true, review: "Peter was awesome!", overall_rating: 7.8, truthful_rating: 10, location_rating: 8, hospitality_rating: 8, amenities_rating: 7, food_rating: 6, drink_rating: 4)
 TailgateUser.create!(user_id: 4, tailgate_id: 1, game_id: 2, requested: true, accepted: false)
 
-Lodging.create!(user_id: 3, tailgate_id: 1, lodging_type: "Airbnb", lodging_name: "Paul's Northport house", address: "2015 McFarland Blvd, Northport, AL 35476")
-Lodging.create!(user_id: 4, tailgate_id: 1, lodging_type: "hotel", lodging_name: "Marriot", address: "215 W Day Rd, Mishawaka, IN 46545")
+Parking.create!(tailgate_user_id: 1, parking_type: "street", address: "1201 Coliseum Dr, Tuscaloosa, AL 35401")
+Parking.create!(tailgate_user_id: 2, parking_type: "garage", address: "345 N 3rd St, Tuscaloosa, AL 35401")
 
-Parking.create!(user_id: 3, tailgate_id: 1, parking_type: "street", address: "1201 Coliseum Dr, Tuscaloosa, AL 35401")
-Parking.create!(user_id: 4, tailgate_id: 1, parking_type: "garage", address: "345 N 3rd St, Tuscaloosa, AL 35401")
+Lodging.create!(tailgate_user_id: 1, lodging_type: "Airbnb", lodging_name: "Paul's Northport house", address: "2015 McFarland Blvd, Northport, AL 35476")
+Lodging.create!(tailgate_user_id: 2, lodging_type: "hotel", lodging_name: "Marriot", address: "215 W Day Rd, Mishawaka, IN 46545")
