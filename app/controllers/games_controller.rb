@@ -5,6 +5,7 @@ class GamesController < ApplicationController
 
     tailgates = Tailgate.all
 
+    # ADD THIS DEPTH OF LOGIC TO TAILGATE METHODS
     games["events"].each do |game|
       if game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y")[0] == "0"
         game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y").slice(1..)
