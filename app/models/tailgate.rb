@@ -8,6 +8,6 @@ class Tailgate < ApplicationRecord
   end
 
   def end_time_conversion
-    end_time.strftime("%I:%MPM - %B %e, %Y").slice(1..)
+    end_time.strftime("%I:%MPM - %A, %B %e, %Y").slice(1..)
   end
 end
