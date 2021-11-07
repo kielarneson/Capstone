@@ -5,7 +5,13 @@ class GamesController < ApplicationController
 
     tailgates = Tailgate.all
 
-    games["events"].each { |game| game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y").slice(1..) }
+    games["events"].each do |game|
+      if game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y")[0] == "0"
+        game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y").slice(1..)
+      else
+        game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y")
+      end
+    end
 
     # What are we doing with tailgates here?
     games = games["events"].map do |event|
