@@ -3,10 +3,11 @@ class GamesController < ApplicationController
     response = HTTP.get("https://api.seatgeek.com/2/events?q=#{params[:q]}&client_id=MzA3NTE0OHwxNjMxOTEyOTc1LjMzNDA4NA&client_secret=#{Rails.application.credentials.seat_geek_api_key}")
     games = JSON.parse(response.body)
 
-    # What are we doing with tailgates here?
     tailgates = Tailgate.all
+
     games["events"].each { |game| game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y").slice(1..) }
 
+    # What are we doing with tailgates here?
     games = games["events"].map do |event|
       event["tailgates"] = tailgates.select { |tailgate| event["id"].to_s == tailgate.game.api_id.to_s }
       event
