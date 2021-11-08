@@ -5,16 +5,17 @@ class GamesController < ApplicationController
 
     tailgates = Tailgate.all
 
-    # ADD THIS DEPTH OF LOGIC TO TAILGATE METHODS
+    # Fix this to be AM and PM
     games["events"].each do |game|
-      if game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y")[0] == "0"
-        game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y").slice(1..)
+      if game["datetime_local"].to_datetime.strftime("%I:%M%p - %A, %B %e, %Y")[0] == "0"
+        game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%M%p - %A, %B %e, %Y").slice(1..)
       else
-        game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%MPM - %A, %B %e, %Y")
+        game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%M%p - %A, %B %e, %Y")
       end
     end
 
     # What are we doing with tailgates here?
+    # Seems very impotant for understanding the power of the map method
     games = games["events"].map do |event|
       event["tailgates"] = tailgates.select { |tailgate| event["id"].to_s == tailgate.game.api_id.to_s }
       event
