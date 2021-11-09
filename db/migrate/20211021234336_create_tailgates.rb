@@ -4,6 +4,7 @@ class CreateTailgates < ActiveRecord::Migration[6.1]
       t.integer :user_id
       t.integer :game_id
       t.string :name
+      t.string :image_url
       t.text :description
       t.string :address
       t.datetime :start_time

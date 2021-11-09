@@ -12,6 +12,7 @@ class TailgatesController < ApplicationController
       user_id: current_user.id,
       game_id: params[:game_id],
       name: params[:name],
+      image_url: params[:image_url],
       description: params[:description],
       address: params[:address],
       start_time: params[:start_time],

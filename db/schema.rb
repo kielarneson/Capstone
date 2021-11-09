@@ -69,6 +69,7 @@ ActiveRecord::Schema.define(version: 2021_10_21_234714) do
     t.integer "user_id"
     t.integer "game_id"
     t.string "name"
+    t.string "image_url"
     t.text "description"
     t.string "address"
     t.datetime "start_time"
