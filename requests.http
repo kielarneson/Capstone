@@ -124,6 +124,17 @@ Content-Type: application/json
   "address": "201 Gemfile DR"
 }
 
+### Update lodgings
+PATCH http://localhost:3000/lodgings/3.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "lodging_type": "Hotel",
+  "lodging_name": "Holiday Inn",
+  "address": "201 Gemfile DR"
+}
+
 ###
 
 ### Index parkings
@@ -133,6 +144,16 @@ Content-Type: application/json
 
 ### Create Parkings
 POST http://localhost:3000/parkings.json
+Authorization: Bearer {{jwt}}
+Content-Type: application/json
+
+{
+  "parking_type": "Street",
+  "address": "504 Small Rd"
+}
+
+### Update Parkings
+PATCH http://localhost:3000/parkings/3.json
 Authorization: Bearer {{jwt}}
 Content-Type: application/json
 

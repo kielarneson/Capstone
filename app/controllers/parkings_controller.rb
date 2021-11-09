@@ -20,4 +20,17 @@ class ParkingsController < ApplicationController
       render json: { errors: parking.errors.full_messages }, status: :bad_request
     end
   end
+
+  def update
+    parking = Parking.find_by(id: params[:id])
+
+    parking.parking_type = params[:parking_type] || parking.parking_type
+    parking.address = params[:address] || parking.address
+
+    if parking.save
+      render json: { message: "Parking updated successfully", parking: parking }, status: :accepted
+    else
+      render json: { errors: parking.errors.full_messages }, status: :bad_request
+    end
+  end
 end

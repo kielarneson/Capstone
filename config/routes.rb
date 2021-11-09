@@ -19,9 +19,11 @@ Rails.application.routes.draw do
 
   get "/lodgings" => "lodgings#index"
   post "/lodgings" => "lodgings#create"
+  patch "/lodgings/:id" => "lodgings#update"
 
   get "/parkings" => "parkings#index"
   post "/parkings" => "parkings#create"
+  patch "/parkings/:id" => "parkings#update"
 
   get "/records" => "records#index"
 

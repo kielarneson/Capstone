@@ -20,4 +20,18 @@ class LodgingsController < ApplicationController
       render json: { errors: lodging.errors.full_messages }, status: :bad_request
     end
   end
+
+  def update
+    lodging = Lodging.find_by(id: params[:id])
+
+    lodging.lodging_type = params[:lodging_type] || lodging.lodging_type
+    lodging.lodging_name = params[:lodging_name] || lodging.lodging_name
+    lodging.address = params[:address] || lodging.address
+
+    if lodging.save
+      render json: { message: "Lodging updated successfully", lodging: lodging }, status: :accepted
+    else
+      render json: { errors: lodging.errors.full_messages }, status: :bad_request
+    end
+  end
 end
