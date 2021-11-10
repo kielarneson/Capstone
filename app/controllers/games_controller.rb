@@ -5,7 +5,6 @@ class GamesController < ApplicationController
 
     tailgates = Tailgate.all
 
-    # Fix this to be AM and PM
     games["events"].each do |game|
       if game["datetime_local"].to_datetime.strftime("%I:%M%p - %A, %B %e, %Y")[0] == "0"
         game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%M%p - %A, %B %e, %Y").slice(1..)
@@ -65,6 +64,12 @@ class GamesController < ApplicationController
   def show
     response = HTTP.get("https://api.seatgeek.com/2/events/#{params[:api_id]}?client_id=MzA3NTE0OHwxNjMxOTEyOTc1LjMzNDA4NA&client_secret=#{Rails.application.credentials.seat_geek_api_key}")
     game = JSON.parse(response.body)
+
+    if game["datetime_local"].to_datetime.strftime("%I:%M%p - %A, %B %e, %Y")[0] == "0"
+      game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%M%p - %A, %B %e, %Y").slice(1..)
+    else
+      game["start_time_conversion"] = game["datetime_local"].to_datetime.strftime("%I:%M%p - %A, %B %e, %Y")
+    end
 
     render json: game.as_json
   end
